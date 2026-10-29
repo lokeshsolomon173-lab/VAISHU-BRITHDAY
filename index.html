@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy 22nd Birthday, Vaishnavi! 💜</title>
+<meta name="theme-color" content="#E8DFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fonts: Cormorant Garamond (headings), Nunito (text), Caveat (photo captions). Falls back to serif/sans if offline. -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Decorative background (hearts, stars, clouds are added by script.js) -->
+<div class="sky" aria-hidden="true"><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div id="floaters"></div></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <p class="small">A little world made just for you</p>
+  <h1>Happy 22nd Birthday, Vaishnavi!</h1>
+  <p class="sub">For the kindest heart and the sweetest soul.</p>
+  <div class="cake" id="heroCake" aria-hidden="true"></div>
+  <button class="btn" id="openBtn">Open Your Birthday Surprise ♡</button>
+</header>
+
+<main id="site" class="locked">
+
+<!-- ============ LETTER ============ -->
+<section id="letter" class="sec">
+  <h2>A Letter for You</h2>
+  <p class="hint" id="envHint">Tap the envelope to open it</p>
+  <div class="env-wrap">
+    <button class="envelope" id="envelope" aria-expanded="false" aria-label="Open the letter">
+      <span class="flap"></span><span class="heart-seal">💜</span>
+    </button>
+    <article class="letter glass" id="letterCard" aria-live="polite"><div id="letterBody"></div></article>
+  </div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section id="countdown" class="sec">
+  <h2>Counting Down to Your Day</h2>
+  <div id="cdBox" class="cd glass">
+    <div><b id="cdD">0</b><span>days</span></div><div><b id="cdH">0</b><span>hours</span></div>
+    <div><b id="cdM">0</b><span>minutes</span></div><div><b id="cdS">0</b><span>seconds</span></div>
+  </div>
+  <p id="cdMsg" class="cd-msg glass" hidden></p>
+</section>
+
+<!-- ============ 22 REASONS ============ -->
+<section id="reasons" class="sec">
+  <h2>22 Reasons You're Special</h2>
+  <p class="hint">Twenty-two little wishes and truths, one for every year.</p>
+  <div class="grid" id="reasonGrid"></div>
+</section>
+
+<!-- ============ RANDOM WISH ============ -->
+<section id="wish" class="sec">
+  <h2>A Little Wish for You</h2>
+  <div class="glass wishbox"><p id="wishText" aria-live="polite">Tap the button for a wish made just for you.</p>
+  <button class="btn" id="wishBtn">Give me a wish 💫</button></div>
+</section>
+
+<!-- ============ MAKE A WISH ============ -->
+<section id="make" class="sec">
+  <h2>Make a Wish</h2>
+  <p class="hint">Close your eyes, think of something lovely, then blow out the candles.</p>
+  <div class="cake big" id="wishCake" aria-hidden="true"></div>
+  <button class="btn" id="blowBtn">Blow out the candles 🕯️</button>
+  <p class="wish-result glass" id="blowMsg" hidden>Your wish is on its way. May every single part of it come true, Vaishu. 💜</p>
+</section>
+
+<!-- ============ MEMORIES ============ -->
+<section id="memories" class="sec wide">
+  <h2>Our Beautiful Memories</h2>
+  <p class="hint" id="galleryHint">Tap any photo to see it bigger</p>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<!-- ============ ONE LAST HUG ============ -->
+<section id="hug" class="sec">
+  <h2>One Last Hug 🤗</h2>
+  <p class="closing glass">Thank you for being exactly who you are. Whatever this year brings, I hope it holds you as gently as you hold everyone else. Happy Birthday, Vaishu. 💙</p>
+  <button class="btn" id="topBtn">Back to the top ↑</button>
+</section>
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close photo">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo">›</button>
+</div>
+
+<!-- ============ MUSIC PLAYER ============ -->
+<aside class="player glass" id="player" aria-label="Music player">
+  <span class="notes" id="notes" aria-hidden="true"><i>♪</i><i>♫</i><i>♪</i></span>
+  <button id="playBtn" aria-label="Play music">▶</button>
+  <input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Song progress">
+  <button id="muteBtn" aria-label="Mute">🔊</button>
+  <small id="musicMsg" role="status"></small>
+  <audio id="audio" preload="none"></audio>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
